@@ -1,0 +1,11 @@
+.calendar-btn {
+    background-color: #f8f9fa; /* Background color to match the icon's container */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .calendar-btn:hover {
+    background-color: #f0f0f0;
+  }
+  
