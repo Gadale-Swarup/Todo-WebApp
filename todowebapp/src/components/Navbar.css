@@ -1,0 +1,129 @@
+.navbar {
+    /* width: 1440px; */
+    height: 100px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+    font-size: 24px;
+}
+.navbar-brand span {
+    color: #f45a5a;
+}
+.form-control {
+    border-radius: 20px;
+}
+.btn-search {
+    background-color: #f45a5a;
+    color: white;
+    border-radius: 50%;
+}
+.nav-icons {
+    font-size: 20px;
+    color: #f45a5a;
+}
+.date-display {
+    font-weight:bold;
+    color: #000000;
+}
+.date-display span {
+    color: #3ABEFF;
+    font-size:14px;
+}
+.calendar-input {
+    width: 150px;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .calendar-input:focus {
+    outline: none;
+  }
+  
+  /* Modal and Calendar Styling */
+  .calendar-modal .modal-header-custom {
+    background-color: #fff;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .calendar-modal .modal-title-custom {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .calendar-modal .modal-body-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+  }
+  
+  /* Custom DatePicker Calendar */
+  .custom-calendar {
+    border: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+  }
+  
+  .custom-calendar .react-datepicker__header {
+    background-color: #f8f9fa;
+    border-bottom: none;
+  }
+  
+  .custom-calendar .react-datepicker__month-container {
+    padding: 20px;
+  }
+  
+  .custom-calendar .react-datepicker__day-name,
+  .custom-calendar .react-datepicker__day {
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .custom-calendar .react-datepicker__current-month {
+    font-size: 18px;
+    color: #ff6767;
+  }
+  
+  .custom-calendar .react-datepicker__day--selected {
+    background-color: #ff6767;
+    color: white;
+    border-radius: 50%;
+  }
+  
+  .custom-calendar .react-datepicker__day--keyboard-selected {
+    background-color: #ff6767;
+    color: white;
+    border-radius: 50%;
+  }
+  
+  .custom-calendar .react-datepicker__navigation--previous {
+    border-right-color: #ff6767;
+  }
+  
+  .custom-calendar .react-datepicker__navigation--next {
+    border-left-color: #ff6767;
+  }
+  
+  .custom-calendar .react-datepicker__day:hover {
+    background-color: #ffe5e5;
+    border-radius: 50%;
+  }
+  
+  /* Modal positioning above the calendar icon */
+  .modal-above-icon .modal-dialog {
+    position: absolute;
+    top: -180px; 
+    left: 80%;
+    transform: translateX(-50%);
+  }
+  

@@ -1,15 +1,24 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import Navbar from './pages/Navbar';
-import Dashboard from './pages/Dashboard';
+import "./App.css";
+// import Login from "./pages/Login";
+// import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import Navbar from "./components/Navbar";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <>
-        <Navbar/>
-        <Dashboard/>
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        {/* <Route path="/" element={<Register />} />
+        <Route path="/login" element={<Login />} /> */}
+        <Route path="/dashboard/*" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
 }
 
