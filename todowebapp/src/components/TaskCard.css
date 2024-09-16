@@ -1,0 +1,29 @@
+
+
+.card {
+    border: 1px solid #ddd;
+  }
+  
+  .icon-circle {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .three-dots {
+    font-size: 34px;
+    color: #black;
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .card .btn-link {
+    text-decoration: none;
+  }
+  

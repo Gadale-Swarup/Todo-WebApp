@@ -1,0 +1,40 @@
+/* Custom styles for VitalTask */
+.task-list {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .task-card.active-task {
+    border: 2px solid #007bff; /* Highlight active task */
+  }
+  
+  .priority-circle {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .task-info {
+    flex-grow: 1;
+  }
+  
+  .task-info h5 {
+    font-weight: bold;
+  }
+  
+  .badge {
+    font-size: 12px;
+  }
+  
+  img {
+    border-radius: 10px;
+  }
+  
+  .card img {
+    object-fit: cover;
+    max-height: 100px;
+  }
+  
+  .btn i {
+    font-size: 1.2rem;
+  }
+  

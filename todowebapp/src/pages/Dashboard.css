@@ -33,7 +33,7 @@
 .lift-text-on-hover {
   position: relative;
   display: inline-block;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 .btn:hover .lift-text-on-hover {
@@ -51,17 +51,3 @@
 }
 
 
-
-
-/* Media Query for responsiveness */
-@media (max-width: 768px) {
-  .sidebar {
-      width: 90%; /* Adjust sidebar width for smaller screens */
-      margin-top: 50px; /* Adjust as needed */
-  }
-
-  .profile-pic-container {
-      width: 80px; /* Reduce profile picture size on smaller screens */
-      height: 80px;
-  }
-}

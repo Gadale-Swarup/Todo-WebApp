@@ -1,0 +1,17 @@
+/* AddTaskModal.css */
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+button[type="submit"] {
+    border-radius: 10px;
+}

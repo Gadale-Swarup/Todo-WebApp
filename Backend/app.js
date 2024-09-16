@@ -4,8 +4,8 @@ const bodyParser = require("body-parser");
 
 const userRoutes = require("./routes/userroutes");
 const taskRoutes = require("./routes/taskroutes");
-const priorityRoutes = require("./routes/priorityroutes");
-const categoryRouter = require("./routes/categoryroutes");
+// const priorityRoutes = require("./routes/priorityroutes");
+// const categoryRouter = require("./routes/categoryroutes");
 
 const cors = require("cors");
 require("dotenv").config();
@@ -24,8 +24,8 @@ app.use(cors());
 
 app.use("/api/users", userRoutes);
 app.use("/api/task", taskRoutes);
-app.use("/api/priority", priorityRoutes);
-app.use("/api/category", categoryRouter);
+// app.use("/api/priority", priorityRoutes);
+// app.use("/api/category", categoryRouter);
 
 
 app.listen(port, () => {

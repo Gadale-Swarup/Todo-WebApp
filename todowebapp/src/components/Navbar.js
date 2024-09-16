@@ -20,6 +20,7 @@ const Navbar = () => {
     const year = today.getFullYear();
     return `${day}/${month}/${year}`;
   };
+  
 
   const getDayOfWeek = () => {
     const today = new Date();

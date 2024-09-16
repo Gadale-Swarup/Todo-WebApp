@@ -65,20 +65,20 @@ const Register = () => {
   };
 
   return (
-    <div className="hero">
-      <div className="container min-vh-100 d-flex align-items-center justify-content-center">
-        <div className="card shadow-lg" style={{ maxWidth: "900px" }}
-        id="hero1"
-        >
-          <div className="card-body p-0">
+    <div className="hero" >
+      <div className="container min-vh-100 d-flex align-items-center justify-content-center" >
+        <div className="card shadow-lg" style={{ maxWidth: "900px" }}>
+          <div className="card-body p-0" >
             <div className="row g-0">
               {/* Left Image Section */}
               <div className="col-lg-5 d-none d-lg-block">
                 <img
                   src={loginimg}
                   alt="Person interacting with screens"
-                  className="img-fluid h-80"
+                  className="img"
                   style={{
+                    width:'300px',
+                    marginRight:"250px",
                     borderTopLeftRadius: ".25rem",
                     borderBottomLeftRadius: ".25rem",
                     marginTop: "100px",
@@ -88,7 +88,7 @@ const Register = () => {
 
               {/* Right Form Section */}
               <div className="col-lg-7 p-5">
-                <h2 className="text-center mb-4">Sign Up</h2>
+                <h2 className="mb-2">Sign Up</h2>
                 <form onSubmit={handleSubmit}>
                   {/* First Name Input */}
                   <div className="mb-3">
@@ -198,7 +198,7 @@ const Register = () => {
                     </div>
                   </div>
 
-                  <div className="mb-3">
+                  {/* <div className="mb-3">
                     <div className="input-group">
                       <span className="input-group-text">
                         <Image />
@@ -213,7 +213,7 @@ const Register = () => {
                         required
                       />
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Agree Terms Checkbox */}
                   <div className="mb-3 form-check">
@@ -235,15 +235,14 @@ const Register = () => {
                   <button
                     type="submit"
                     id="register"
-                    className="btn btn-danger text-white mb-3"
-                  >
+                    className="btn btn-danger text-white mb-3">
                     Register
                   </button>
 
                   {/* Redirect to Sign In */}
-                  <p className="text-center mb-0">
+                  <p className=" mb-0">
                     Already have an account?{" "}
-                    <a href="l" className="text-info">
+                    <a href="/login" className="text-info">
                       Sign In
                     </a>
                   </p>

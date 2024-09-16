@@ -24,10 +24,13 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
         
-    },
+    },  
     profilepic:{
         type:String,
-        required:true
+        required:false
+    },
+    agreeTerms:{
+        type:Boolean
     }
 
 });
