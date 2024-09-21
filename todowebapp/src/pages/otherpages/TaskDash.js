@@ -6,11 +6,14 @@ import { PlusIcon, CheckIcon, ClipboardIcon, ActivityIcon } from "lucide-react";
 import axios from "axios";
 import TaskCard from "../../components/TaskCard";
 import AddTaskModal from "./AddTaskModal";
+import InviteModal from "./InviteModal";
 // import TaskCard from "../components";
 
 export default function TaskDashboard({ user }) {
   const [task, setTask] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [inviteModalShow, setInviteModalShow] = useState(false);
+
 
   const [expandedTask, setExpandedTask] = useState(null);
 
@@ -20,6 +23,9 @@ export default function TaskDashboard({ user }) {
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
+
+  const handleInviteModalClose = () => setInviteModalShow(false); // Close Invite modal
+  const handleInviteModalShow = () => setInviteModalShow(true);
 
   const getMonths = () => {
     const today = new Date();
@@ -68,6 +74,7 @@ export default function TaskDashboard({ user }) {
     }
     gettask();
   }, []);
+ 
 
   return (
     <div>
@@ -88,7 +95,7 @@ export default function TaskDashboard({ user }) {
 
               <div className="d-flex align-items-center">
                 {/* Invite button */}
-                <Button variant="outline-danger" className="ms-3 invite-btn">
+                <Button variant="outline-danger" className="ms-3 invite-btn" onClick={handleInviteModalShow}>
                   <i className="bi bi-person-plus"></i> Invite
                 </Button>
               </div>
@@ -121,7 +128,7 @@ export default function TaskDashboard({ user }) {
                   </div>
                   <div className="d-grid gap-4">
                     {task.map((task) => (
-                      <TaskCard
+                      <TaskCard 
                         key={task._id}
                         title={task.title}
                         description={task.description}
@@ -231,7 +238,7 @@ export default function TaskDashboard({ user }) {
                                 task.taskimage ||
                                 "https://via.placeholder.com/60"
                               }
-                              rounded
+                            
                               alt={task.title}
                               style={{
                                 width: "90px",
@@ -276,6 +283,8 @@ export default function TaskDashboard({ user }) {
           </div>
         </div>
       </div>
+    <InviteModal show={inviteModalShow} handleClose={handleInviteModalClose} />
+
     </div>
   );
 }

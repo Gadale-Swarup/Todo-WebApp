@@ -10,6 +10,8 @@ import VitalTask from "./otherpages/VitalTask";
 import TaskCategories from "./otherpages/TaskCategories";
 import Settings from "./otherpages/Settings";
 import MyTask from "./otherpages/MyTask";
+import TaskDetails from "./otherpages/TaskDetails";
+
 
 const Dashboard = () => {
   const [user, setUser] = useState({});
@@ -46,6 +48,8 @@ const Dashboard = () => {
 
     getUserInfo();
   }, []);
+  
+ 
 
   const logout = () => {
     Navigate("/login");
@@ -140,8 +144,8 @@ const Dashboard = () => {
           <Route path="taskcategories" element={<TaskCategories/>} />
           <Route path="settings" element={<Settings/>} />
           <Route path="mytask" element={<MyTask/>} />
-          {/*<Route path="help" element={<h1>Help</h1>} />
-          <Route path="logout" element={<h1>Logout</h1>} /> */}
+          {/*<Route path="help" element={<h1>Help</h1>} />*/}
+          <Route path="details/:taskid" element={<TaskDetails/>} /> 
         </Routes>
       </div>
     </div>

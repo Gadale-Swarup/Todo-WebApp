@@ -32,7 +32,7 @@ const TaskCard = ({
           </div>
           <div>
             <h5 className="card-title mb-1 fw-bold">{title}</h5>
-            <p className="card-text text-muted" style={{ maxWidth: "380px" }}>
+            <p className="card-text text-muted" style={{ maxWidth: "120px" }}>
               {description}
             </p>
           </div>

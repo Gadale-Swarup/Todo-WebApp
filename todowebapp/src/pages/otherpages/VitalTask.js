@@ -1,28 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import TaskCard from '../../components/TaskCard';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import TaskCard from "../../components/TaskCard";
+import axios from "axios";
+import {  useParams } from "react-router-dom";
 
 const VitalTask = () => {
-  const [tasks, setTasks] = useState([]); 
-  const [selectedTask, setSelectedTask] = useState(null); 
+  const [tasks, setTasks] = useState([]);
+  const [selectedTask, setSelectedTask] = useState(null);
+  const{tasksid}=useParams();
+  console.log(tasksid)
 
   useEffect(() => {
     async function getTasks() {
       try {
-        const response = await axios.post(
-          'http://localhost:5012/api/task/getalltask',
-          {},
+        const response = await axios.get(
+          "http://localhost:5012/api/task/getFilteredTasks",
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem('token')}`,
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
           }
         );
-        console.log('Tasks:', response.data);
-        setTasks(response.data);
+        console.log("Tasks:", response.data);
+        setTasks(response.data.tasks);
       } catch (error) {
         console.error(
-          'Error fetching tasks:',
+          "Error fetching tasks:",
           error.response ? error.response.data : error.message
         );
       }
@@ -30,7 +32,6 @@ const VitalTask = () => {
     getTasks();
   }, []);
 
-  // Function to handle task selection
   const handleTaskClick = (task) => {
     setSelectedTask(task);
   };
@@ -39,29 +40,29 @@ const VitalTask = () => {
     <div className="row">
       {/* Left Side - List of Tasks */}
       <div className="col-md-6">
-        <div className="card shadow-sm p-3 mb-3 bg-white rounded" >
+        <div className="card shadow-sm p-3 mb-3 bg-white rounded">
           <h2>Vital Tasks</h2>
-          {tasks.map((task) => (
-            <div onClick={() => handleTaskClick(task)}>
-
-            <TaskCard
-              key={task._id}
-              title={task.title}
-              description={task.description}
-              priority={task.priority}
-              status={task.status}
-              createdOn={task.createdAt}
-              imageSrc={task.taskimage}
-             
-            />
+          <div>
+            {tasks.map((task) => (
+              <div onClick={() => handleTaskClick(task)}>
+                <TaskCard
+                  key={task._id}
+                  title={task.title}
+                  description={task.description}
+                  priority={task.priority}
+                  status={task.status}
+                  createdOn={task.createdAt}
+                  imageSrc={task.taskimage}
+                />
               </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Right Side - Task Details */}
       <div className="col-md-6">
-      <div className="">
+        <div className="">
           {selectedTask ? (
             <div className="card shadow-sm p-3">
               <div className="d-flex align-items-center mb-3">

@@ -9,7 +9,8 @@ router.post("/getalltask", authorize.auth, taskcontroller.getalltask);
 router.post("/gettaskbyid/:id", authorize.auth, taskcontroller.gettaskbyid);
 router.put("/updatetask/:id", authorize.auth, taskcontroller.updatetask);
 router.delete("/deletetask/:id", authorize.auth, taskcontroller.deleteTaskbyid);
+
 router.get("/getFilteredTasks", authorize.auth, taskcontroller.getFilteredTasks);
-router.post("/getTasksForUser", authorize.auth, taskcontroller.getTasksForUser);
+router.get("/getTasksForUser", authorize.auth, taskcontroller.getTasksForUser);
 
 module.exports = router;

@@ -63,7 +63,7 @@ async function deleteTaskbyid(req,res){
 
 async function gettaskbyid(req, res) {
   console.log(req.body);
-  const { id } = req.params;
+  const  id  = req.params.id;
   try {
     const task = await TaskModel.findById(id);
     console.log(id);
@@ -142,16 +142,15 @@ const addCollaborator = async (req, res) => {
   };
   const getTasksForUser = async (req, res) => {
     try {
-      // Fetch tasks created by the logged-in user
       const tasks = await TaskModel.find({ createdBy: req.user._id });
   
       if (tasks.length === 0) {
         return res.status(404).json({ message: "No tasks found for this user" });
       }
-  
       res.status(200).send({ tasks });
     } catch (error) {
       res.status(500).send({ message: "Server Error", error });
+      console.log(error)
     }
   };
 
